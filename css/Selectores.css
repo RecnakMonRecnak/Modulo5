@@ -1,0 +1,72 @@
+p1{
+    color: rgb(47, 13, 241);
+    font-weight: bold;
+}
+p2{
+    color: rgb(255, 44, 199);
+    font-weight: bold;
+}
+
+p3{
+    color: rgb(253, 3, 3);
+    font-style: italic;
+    text-decoration: underline red;
+}
+
+p5{
+    color: rgb(255, 44, 199);
+    font-style: italic;
+}
+
+p6{
+    color: rgb(0, 129, 41);
+    font-style: italic;
+}
+
+p7{
+    color: rgb(47, 13, 241);
+    font-size:small
+}
+
+.rojo{
+    color: rgb(241, 13, 13);
+    font-weight: bold;
+}
+
+.naranja{
+    color: rgb(241, 135, 13);
+    font-weight: bold;
+}
+
+.azul{
+    color: rgb(13, 203, 241);
+    font-weight: bold;
+}
+
+p4{
+    color:MediumBlue;
+    font-style: italic;
+    text-decoration: underline red;
+}
+.morado{
+    color:darkorchid
+}
+
+.olive{
+    color:rgba(38, 57, 5, 0.804)
+}
+
+table {
+    border-collapse: collapse;
+}
+ 
+table,
+th,
+td {
+    border: 1px solid black;
+}
+ 
+th,
+td {
+    padding: 8px;
+}
