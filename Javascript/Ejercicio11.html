@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número mayor de un array</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+    var numero = [88,52,92,125,36,5,84,25,152,66,78,25,45,19,31,78];
+    mayor = 0;
+
+    for(var i=0,len=numero.length;i<len;i++){
+        if(mayor < numero [i]){
+            mayor = numero [i];
+        }
+    }
+    document.write(mayor);
+    
+    </script>
+
+</body>
+</html>
