@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es un numero par o impar</title>
+
+</head>
+<body>
+    <h1>¿Tu número es par o impar?</h1>
+    <input type="number">
+    <button id="btn">Comprobar</button>
+    <p id="resultado"></p>
+
+
+    <script>
+       var boton =  document.getElementById('btn');
+
+boton.addEventListener ('click', comprobarNumero);
+
+function comprobarNumero(){
+    console.log ("click");
+    var valor = document.getElementsByTagName('input')[0].value;
+    console.log ("valor", valor);
+    if (valor%2 === 0){
+        document.getElementById('resultado').innerHTML ='es un número par';
+    } else{
+        document.getElementById('resultado').innerHTML ='es un número impar';
+    }
+    
+}; 
+    </script>
+</body>
+</html>

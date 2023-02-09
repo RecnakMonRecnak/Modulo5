@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Eventos</title>
+</head>
+<body>
+    <h1>Eventos</h1>
+    <p>Haz que cuando se haga click sobre el botón “Guardar”, salté un alert con un mensaje de guardado.</p>
+    <button id="btn">Guardar</button>
+    <br> <br>
+    <p>Cuando hagamos foco sobre este input se pondrá de color amarillo y cuando se lo quitemos cambiará de color</p>
+    <label>Nombre</label>
+    <input type=”text” />
+    <br> <br>
+    <p>Dependiendo si escribamos una vocal o una consonante el contenido del input aparecerá de distinto color</p>
+    <label>Escribe una letra</label>
+    <input type=”text”/>
+
+    <script>
+    document.getElementById('btn').addEventListener('click', function(){
+        alert('El Elemento ha sido guardado');
+
+    });
+
+    var inputFondo = document.getElementsByTagName ('input')[0];
+    inputFondo.addEventListener('focus', cambioColor);
+    function cambioColor(){
+        inputFondo.style.backgroundColor= 'green';
+    };
+    inputFondo.addEventListener ('focusout', quitarColor);
+    function quitarColor(){
+        inputFondo.style.backgroundColor = '';
+        
+    };
+
+    var inputLetras = document.getElementsByTagName ('input')[1];
+    inputLetras.addEventListener('keydown', vocales);
+    function vocales(event){
+        console.log ('event', event);
+        const vocales = [65,69,79,73,85];
+        // if(event.keyCode == 65 ||event.keyCode == 69 ||event.keyCode == 79 ||event.keyCode == 73 ||event.keyCode == 85){
+        //if (vocales.includes(event.keyCode)===true){
+   
+        if (vocales.indexOf(event.keyCode)!== -1 ){
+            inputLetras.style.color = 'red';       
+        }else {
+            inputLetras.style.color = 'green';
+    }
+
+}
+
+
+
+
+    </script>
+</body>
+</html>

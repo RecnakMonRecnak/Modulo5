@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+const books = [
+  {title: 'El Quijote', avg_rating:4.5},
+  {title: 'Don Juan', avg_rating:3.8},
+  {title: 'Cien años de soledad', avg_rating:4.7},
+  {title: 'Matar a un Ruiseñor', avg_rating:5},
+  {title: 'El gran Gatsby', avg_rating:3.6}
+];
+
+var resultados = books.filter (function(libro){
+    return libro.avg_rating > 4
+});
+
+console.log (resultados);
+
+var resultados2=resultados.map (function (libro) {
+    return {title:libro.title, raiting: libro.avg_rating } 
+});
+
+console.log (resultados2);
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separar impares y pares</title>
+</head>
+<body>
+  <script type="text/javascript">
+  
+  var number = [253, 8575, 1, 20, 562, 1233, 25, 27, 258, 254, 7485, 2683];
+
+  var numberPares =  number.filter(function(numero){
+    return numero % 2== 0;
+  });
+
+  document.write(numberPares);
+
+  var numberImpares =  number.filter(function(numero2){
+    return numero2 % 2 !==0;
+  });
+  
+  document.write(numberImpares);
+
+
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
