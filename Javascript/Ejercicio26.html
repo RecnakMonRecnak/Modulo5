@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid"></div>
+      </nav>
+        <h1 class="text-primary">Lista de Tareas</h1>
+        <div class="form-inline">
+          <input type="text" id="list" class="form-control"/>
+          <button class="btn btn-success" onclick="addList()">Agregar</button>
+        </div>
+       
+
+<script>
+var items = document.getElementById('list');
+var lists = []
+
+function addList(){
+  var list = document.getElementById('list');
+  var val = list.value;
+  if(val == ""){
+    alert("Por Favor Ingrese la Lista primero!");
+  }else{
+    lists.push(val.trim());
+    list.value = '';
+    displayList();
+  }
+  
+}
+
+function displayList(){
+  var data = '';
+  if(lists.length > 0){
+    for(var i=0; i < lists.length; i++){
+      data += "<li class='list-group-item'><button class='pull-right' onclick='removeList("+i+")'><span class='glyphicon glyphicon-trash'></span></button>"+lists[i]+"</li>";
+    }
+  }
+  
+  document.getElementById('result').innerHTML = data;
+}
+
+function removeList(list){
+  lists.splice(list, 1);
+  displayList();
+}
+</script>
+
+//crear lista vacia (ul) en html
+//Rellenarla con tareas (li)
+
+</body>
+</html>

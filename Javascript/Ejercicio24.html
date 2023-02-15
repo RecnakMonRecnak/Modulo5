@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selección de una Ciudad</title>
+</head>
+
+<body>
+  <label for="ciudades">Selecione una ciudad: </label>
+  <br><br>
+  <select id="ciudades" onchange="mostrarCiudadElegida()">
+    <option value="Alava">Alava</option>
+    <option value="Barcelona">Barcelona</option>
+    <option value="Bilbao">Bilbao</option>
+    <option value="Cuenca">Cuenca</option>
+    <option value="Canarias">Canarias</option>
+    <option value="Baleares">Islas Baleares</option>
+    <option value="Guadalajara">Guadalajara</option>
+    <option value="Vigo">Vigo</option>
+  </select> 
+  <div id="result"></div>
+  <script>
+function mostrarCiudadElegida() {
+  const select = document.getElementById("ciudades");
+  const ciudadElegida = select.options[select.selectedIndex].text;
+  document.getElementById("result").innerHTML = `La ciudad elegida es ${ciudadElegida}.`;
+ }
+ 
+</script>
+ 
+</body>
+</html>

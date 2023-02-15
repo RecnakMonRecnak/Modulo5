@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opiniones de Usuario</title>
+</head>
+<body>
+ <h3> Escribe tu opinión:</h3>
+
+<textarea id="msg" name="user_message"id="Text" rows="10" cols="50" onkeyup ="verificarEnter(event)"></textarea>
+
+<br><br>
+<button onclick="imprimirTexto()">Imprimir texto</button>
+<br>
+
+<div id="resultado"></div>
+
+<Script>
+function imprimirTexto() {
+    const texto = document.getElementById("texto").value;
+    document.getElementById("resultado").innerHTML = `El usuario ha escrito "${texto}".`;
+};
+
+function verificarEnter (event){
+    if(event.key === "Enter"){
+        imprimirTexto();
+    }
+};
+
+</Script>
+
+</body 
+</html>

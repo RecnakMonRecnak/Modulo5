@@ -17,11 +17,11 @@ const heros = [
   {name: 'Silver Surfer'},
 ];
 
-const superheros = heros.map(function(heroes, index){
+const superheros = heros.map(function(heroe, index){
     return {id: index, superhero: heroe.name}
 });
 
-const superheros2=heros.map((heroe, index)=>)
+const superheros2=heros.map((heroe, index)=> ({id:index, superhero:heroe.name}))
 
 console.log (superheros);
 

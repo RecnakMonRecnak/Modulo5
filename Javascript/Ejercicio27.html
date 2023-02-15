@@ -1,0 +1,28 @@
+<!DOCTYPE html>  
+<html>  
+     <head>  
+          <meta charset="utf-8"/>  
+          <title>Adivina el numero </title>  
+     </head>  
+     <body style="background-color:#f9fffd;">  
+      <h1> <center> Adivina el número</center></h1>
+    
+      <center><p> Introduce aquí tu número</p></center>  
+          <center><input id="M" value="50" ><br></center>  
+          <center> <button type="button" onclick="myFunction()">Prueba</button>  </center>
+          <center><div id="txt"></div></center> 
+          <script type="text/javascript">  
+               var secreto = Math.floor(Math.random()*100)+1; //El numero aleatorio se queda fuera de la funcion porque si no cada vez que le diesemos al boton se cambiaría el valor de "secreto"  
+               function myFunction(){  
+                    var x = document.getElementById("M").value;  
+                    if (x==secreto){  
+                         document.getElementById("txt").innerHTML = "Has adivinado el numero secreto, el numero era "+secreto+". Para jugar otra vez recarga la pagina.";  
+                    }else if (x > secreto) {  
+                         document.getElementById("txt").innerHTML = "Intenta con un numero mas pequeño.";  
+                    }else if (x < secreto) {  
+                         document.getElementById("txt").innerHTML = "Intenta con un numero mas grande.";  
+                    }  
+               }  
+          </script>  
+     </body>  
+</html>  

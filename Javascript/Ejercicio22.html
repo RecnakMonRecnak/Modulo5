@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula todo</title>
+
+</head>
+
+<body>
+    <p id="parrafo">Introduce números enteros separados por comas</p>
+
+    <input type="text" id="text"> </input>
+    <input type="button" value="Cargar Ejemplo" onclick="cargarejemplo()"></input>
+    <br>
+    <input type="button" value="calcular" onclick="calcular()"></input>
+    <input type="button" value="Reiniciar" onclick="Reiniciar()">
+
+    <p id="array"></p>
+
+    <p id="resultado"></p>
+
+    <script>
+
+        function cargarejemplo() {
+
+            document.getElementById("text").value = "5,99,43,12,37";
+
+        }
+        function Reiniciar() {
+            location.reload();
+        }
+
+        function calcular() {
+            var array=document.getElementById("text").value.split(/,/);
+            var mayor=-Infinity,menor=+Infinity,suma=0, media=0;
+
+            // SUMA
+            for(i=0;i<array.length;i++) {
+                suma=parseInt(array[i])+suma;
+            }
+
+            // MEDIA
+            media = suma / array.length;
+
+            // MENOR
+            for (i = 0; i < array.length; i++) {
+                if (parseInt(array[i]) < menor) menor = array[i];
+            }
+
+            // MAYOR
+            for (i = 0; i < array.length; i++) {
+                if (parseInt(array[i]) > mayor) mayor = array[i];
+            }
+
+            //RESULTADO
+
+            document.getElementById("resultado").innerHTML = "la suma de los números es:" +suma+ "<br>" +
+                "La media  de los números es:" +media+ "<br>" +
+
+                "El mayor de los números es:" +mayor+ "<br>" +
+
+                "El menor de los números es:" +menor+ "<br>"
+            
+            }
+
+            
+
+
+    </script>
+</body>
+
+</html>

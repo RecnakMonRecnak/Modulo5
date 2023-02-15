@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar ocultar texto al pulsar el boton</title>
+</head>
+
+<body>
+    <p>El ordenamiento territorial es un instrumento de planificación y de gestión de las entidades territoriales y un proceso de construcción colectiva de país.</p>
+   
+         
+        <a href="javascript: void(0);" onClick="toggle('q1')">
+            Leer más 
+        </a>
+        <div id="q1" style="display:none;">
+            El Ordenamiento Territorial se da de manera progresiva, gradual y flexible, con respon- sabilidad fiscal, tendiente a lograr una adecuada organización político administrativa del Estado.
+        </div>
+        <script>
+            function toggle(obj) {
+                      var obj=document.getElementById("q1");
+                      if (obj.style.display == "block") obj.style.display = "none";
+                      else obj.style.display = "block";
+            }
+            </script>
+</body>
+</html>
