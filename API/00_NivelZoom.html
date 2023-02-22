@@ -1,0 +1,63 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Mostrar el nivel de zoom</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+    #location {
+      padding: 15px;
+      background: white;
+      color: black;
+       border: 2px solid gold;
+       font-family: sans-serif;
+       font-size: 1.2em;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="https://js.arcgis.com/4.16/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.16/"></script>
+  
+  <script>
+    require([
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/core/watchUtils"
+    ], function(Map, MapView, watchUtils) {
+
+      var map = new Map({
+        basemap: "satellite"
+      });
+
+      var view = new MapView({
+        container: "viewDiv",
+        map: map,
+        center: [-3.67, 40.42], // longitude, latitude
+        zoom: 12
+      });
+      
+      view.ui.add("location", "bottom-left");
+
+      watchUtils.whenTrue(view, "stationary", function() {
+        lon = parseInt(view.center.x); // with parseInt values are rounded to the full meter (coordinates in Web Mercator - EPSG:3857)
+        lat = parseInt(view.center.y);
+        zoomLevel = view.zoom;
+        document.getElementById("location").innerHTML = "Centro del Mapa = Longitud: " + lon + " / Latitud: " + lat + " / Nivel Zoom: " + zoomLevel; 
+      });
+      
+
+
+
+    });
+  </script>
+</head>
+<body>
+  <div id="viewDiv"></div>
+  <div id="location"></div>
+</body>
+<html>

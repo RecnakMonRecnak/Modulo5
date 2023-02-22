@@ -30,16 +30,16 @@ function crearBarra(id_barra){
 }
 
 //selecciono todas las barras generales par aluego manipularlas
-let html = document.getElementById("html");
-crearBarra(html);
-let javascript = document.getElementById("javascript");
-crearBarra(javascript);
-let wordpress = document.getElementById("wordpress");
-crearBarra(wordpress);
-let photoshop = document.getElementById("photoshop");
-crearBarra(photoshop);
-let php = document.getElementById("php");
-crearBarra(php);
+let arcgis = document.getElementById("arcgis");
+crearBarra(arcgis);
+let Office = document.getElementById("Office");
+crearBarra(Office);
+let GVSig = document.getElementById("GVSig");
+crearBarra(GVSig);
+let erdas = document.getElementById("erdas");
+crearBarra(erdas);
+let quantum = document.getElementById("quantum");
+crearBarra(quantum);
 let ilustrator = document.getElementById("ilustrator");
 crearBarra(ilustrator);
 
@@ -56,20 +56,20 @@ function efectoHabilidades(){
     var distancia_skills = window.innerHeight - habilidades.getBoundingClientRect().top;
     if(distancia_skills>=300 && entro==false){
         entro = true;
-        const intervalHtml = setInterval(function(){
-            pintarBarra(html, 16, 0, intervalHtml);
+        const intervalarcgis = setInterval(function(){
+            pintarBarra(arcgis, 16, 0, intervalarcgis);
         },100);
-        const intervalJavascript = setInterval(function(){
-            pintarBarra(javascript, 11, 1, intervalJavascript);
+        const intervalOffice = setInterval(function(){
+            pintarBarra(Office, 11, 1, intervalOffice);
         },100);
-        const intervalWordpress = setInterval(function(){
-            pintarBarra(wordpress, 11, 2, intervalWordpress);
+        const intervalGVSig = setInterval(function(){
+            pintarBarra(GVSig, 11, 2, intervalGVSig);
         },100);
-        const intervalPhotoshop = setInterval(function(){
-            pintarBarra(photoshop, 15, 3, intervalPhotoshop);
+        const intervalerdas = setInterval(function(){
+            pintarBarra(erdas, 15, 3, intervalerdas);
         },100);
-        const intervalPhp = setInterval(function(){
-            pintarBarra(php, 16, 4, intervalPhp);
+        const intervalquantum = setInterval(function(){
+            pintarBarra(quantum, 16, 4, intervalquantum);
         },100);
         const intervalIlustrator = setInterval(function(){
             pintarBarra(ilustrator, 11, 5, intervalIlustrator);
@@ -92,4 +92,5 @@ function pintarBarra(id_barra, cantidad, indice, interval){
 //detecto el scrolling del mouse para aplicar la animación de la barra
 window.onscroll = function(){
     efectoHabilidades();
+
 }
